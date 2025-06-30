@@ -1,61 +1,69 @@
-Water Trash Detection and Classification System
-A smart AI-powered solution to detect and classify waterborne trash using deep learning, empowering communities and authorities to take timely environmental action.
+# 🌊 **WATER TRASH DETECTION AND CLASSIFICATION SYSTEM**
 
-🧠 Overview
-This project focuses on real-time detection and classification of trash in water bodies using deep learning techniques (YOLOv8), integrated into a cross-platform application (web/mobile) using Flutter. The system helps identify types of waste such as plastic, metal, organic waste, and more, assisting in maintaining cleaner water bodies.
+A smart AI-powered system that detects and classifies trash in water bodies using deep learning, helping communities and authorities take cleanup action via mobile and web applications.
 
-🚀 Features
-📸 Real-time trash detection via camera or uploaded images
+---
 
-🧾 Classification of trash (e.g., plastic, bottle, paper, etc.)
+## 📌 **TABLE OF CONTENTS**
 
-🗺️ Geo-tagging of detection location using GPS
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [Model Training](#-model-training)
+- [Usage](#-usage)
+- [Screenshots](#-screenshots)
+- [Future Enhancements](#-future-enhancements)
+- [Contributors](#-contributors)
+- [License](#-license)
 
-☁️ Firebase integration for image & data storage
+---
 
-🔔 Notification alerts for admin when new trash is detected
+## 📖 **OVERVIEW**
 
-📊 Admin dashboard (planned) for monitoring reports
+The **Water Trash Detection and Classification System** is designed to identify and classify types of waste floating in water (e.g., plastic bottles, cans, paper) using YOLOv8 deep learning models. The system integrates with a cross-platform Flutter app and Firebase backend to support real-time trash detection, reporting, and tracking with GPS metadata.
 
-📱 Cross-platform support (Android, Web)
+---
 
-🧰 Tech Stack
-Technology	Purpose
-Flutter	Cross-platform mobile & web app
-YOLOv8	Deep learning model for trash detection
-Python	Model training and integration
-TensorFlow Lite / ONNX	Model conversion for mobile
-Firebase	Auth, Firestore DB, Storage, Notifications
-Google Maps API	Display detection location
+## 🚀 **KEY FEATURES**
 
-📷 Sample Screens
-📱 User Camera Detection Screen
+- 📸 Real-time trash detection via camera or image upload  
+- 🧠 Object detection using YOLOv8 model  
+- 🌍 Auto-location tagging with GPS  
+- ☁️ Firebase for storage, database, and notifications  
+- 🔔 Admin alert system on new detections  
+- 📊 Web dashboard (planned) for viewing reports
 
-🌍 Map showing trash detection points
+---
 
-🔔 Admin notifications interface
+## 🛠 **TECH STACK**
 
-📂 Project Structure
-bash
-Copy
-Edit
+| 🧩 Technology     | 💼 Purpose                             |
+|------------------|----------------------------------------|
+| Flutter          | Mobile & Web App Development           |
+| YOLOv8           | Trash Object Detection (Ultralytics)   |
+| Python           | Training & Inference Script            |
+| TensorFlow Lite  | Model conversion for mobile            |
+| Firebase         | Auth, Firestore, Cloud Storage, FCM    |
+| Google Maps API  | Trash location visualization           |
+
+---
+
+## 🗂 **PROJECT STRUCTURE**
+
+```bash
 water-trash-detection/
 │
-├── model/                     # Trained YOLOv8 weights
 ├── app/                      # Flutter application
 │   ├── lib/
 │   ├── assets/
-│   ├── pubspec.yaml
+│   └── pubspec.yaml
 │
-├── backend/
-│   ├── python_inference/     # Python scripts for model inference
-│   ├── data/                 # Dataset used for training
+├── model/                    # Trained YOLOv8 weights
+├── backend/                  # Python model training & inference
+│   ├── detect.py
+│   └── utils/
 │
-├── firebase/                 # Firebase rules, functions
+├── firebase/                 # Firebase config & rules
 └── README.md
-🧪 Dataset
-Collected & labeled trash images from water bodies
-
-Augmented for plastic bottles, cans, bags, organic waste
-
-Trained using Roboflow + YOLOv8 pipeline
